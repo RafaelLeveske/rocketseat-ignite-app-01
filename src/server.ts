@@ -1,15 +1,15 @@
-import express from 'express'
+import express from "express";
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-app.get('/', (request, response) => {
-  return response.json({
-    message: "ok"
+app.get("/", (request, response) =>
+  response.json({
+    message: "ok",
   })
-})
+);
 
 app.listen(3333, () => {
-  console.log('Server is running...')
-})
+  console.log("Server is running...");
+});
