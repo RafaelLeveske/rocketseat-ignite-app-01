@@ -1,12 +1,16 @@
 import Category from "../models/Category";
+import {
+  ICategoriesRepository,
+  ICreateCategoryDTO,
+} from "./ICategoriesRepository";
 
-export default class CategoriesRepository {
+export default class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
   constructor() {
     this.categories = [];
   }
 
-  create({ name, description }): Category {
+  create({ name, description }: ICreateCategoryDTO): Category {
     const category = new Category();
 
     Object.assign(category, {
@@ -16,8 +20,6 @@ export default class CategoriesRepository {
     });
 
     this.categories.push(category);
-
-    console.log(this.categories);
 
     return category;
   }
@@ -31,8 +33,6 @@ export default class CategoriesRepository {
   }
 
   list(): Category[] {
-    console.log(this.categories);
-
     return this.categories;
   }
 }
