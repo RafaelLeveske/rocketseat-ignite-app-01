@@ -10,7 +10,6 @@ export default class CategoryService {
   execute({ description, name }: IRequest) {
     const categoryAlreadyExits = this.categoriesRepository.findByName(name);
 
-    console.log(categoryAlreadyExits);
     if (categoryAlreadyExits) {
       throw new Error("Categoria já existe");
     }
