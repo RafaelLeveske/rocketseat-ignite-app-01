@@ -5,20 +5,21 @@ interface IRequest {
   description: string;
 }
 
-export default class CategoryService {
+export default class CreateSpecificationService {
   constructor(private specificationRepository: ISpecificationRepository) {}
   execute({ description, name }: IRequest) {
-    const categoryAlreadyExits = this.specificationRepository.findByName(name);
+    const specificationAlreadyExits =
+      this.specificationRepository.findByName(name);
 
-    if (categoryAlreadyExits) {
-      throw new Error("Categoria já existe");
+    if (specificationAlreadyExits) {
+      throw new Error("Especificação já existe");
     }
 
-    const category = this.specificationRepository.create({
+    const specification = this.specificationRepository.create({
       name,
       description,
     });
 
-    return category;
+    return specification;
   }
 }

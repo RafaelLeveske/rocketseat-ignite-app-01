@@ -23,11 +23,11 @@ export default class SpecificationsRepository
   }
 
   findByName(name: string): Specification {
-    const findCategoryByName = this.specifications.find(
+    const findSpecificationByName = this.specifications.find(
       (element) => element.name === name
     );
 
-    return findCategoryByName;
+    return findSpecificationByName;
   }
 
   create({ name, description }: ICreateSpecificationDTO): void {
