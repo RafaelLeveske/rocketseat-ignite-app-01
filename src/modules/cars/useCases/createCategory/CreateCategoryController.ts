@@ -12,6 +12,6 @@ export default class CreateCategoryController {
       name,
     });
 
-    return response.status(200).json(category);
+    return response.status(201).json(category);
   }
 }
