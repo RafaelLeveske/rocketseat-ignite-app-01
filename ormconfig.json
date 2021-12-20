@@ -5,6 +5,7 @@
   "username": "docker",
   "password": "ignite",
   "database": "app-01",
+  "entities": ["./src/modules/**/*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
